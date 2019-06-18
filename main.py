@@ -220,7 +220,8 @@ def simulate():
 print("Welcome to Monty Hall!")
 counters = Counters()
 first_play = True
-while True:
+quit_game = False
+while not quit_game:
     option = 'x'
     while option not in ['p', 's', 'm', 'q']:
         print("What do you want to do?")
@@ -244,4 +245,4 @@ while True:
     if option == 'm':
         simulate()
     if option == 'q':
-        break
+        quit_game = True
