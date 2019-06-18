@@ -219,12 +219,15 @@ def simulate():
 
 print("Welcome to Monty Hall!")
 counters = Counters()
-play()
+first_play = True
 while True:
     option = 'x'
     while option not in ['p', 's', 'm', 'q']:
         print("What do you want to do?")
-        print("(p)lay again")
+        if first_play:
+            print("(p)lay")
+        else:
+            print("(p)lay again")
         print("Simulate (m)any games")
         print("Print (s)tats")
         print("(q)uit")
@@ -232,6 +235,7 @@ while True:
 
     print_sep()
     if option == 'p':
+        first_play = False
         play()
     if option == 's':
         print("Global Stats:")
