@@ -217,7 +217,7 @@ def simulate():
     print_sep()
 
 
-print("Welcome to Montehall!")
+print("Welcome to Monty Hall!")
 counters = Counters()
 play()
 while True:
