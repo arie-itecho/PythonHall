@@ -180,20 +180,16 @@ def simulate():
     for i in range(1, count + 1):
         if not skip_counts or i % 100 == 0 or i == count:
             print("Simulation {0}:".format(i))
+
         doors = Doors()
         winner = doors.set_winner()
-
         choice = random.randint(1, 3)
         doors.choose(choice)
         if print_all:
             print("\tPlayer chooses door {}.".format(choice))
-
-        revealed = doors.reveal()
-        if print_all:
-            print("\tPresenter reveals door {}.".format(revealed))
-
-        if print_all:
+            print("\tPresenter reveals door {}.".format(doors.reveal()))
             print("\tThe winning door is {}.".format(winner))
+        
         if winner == choice:
             if print_all:
                 print("Player should stay.")
