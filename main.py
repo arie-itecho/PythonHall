@@ -163,7 +163,7 @@ def simulate():
     count = 0
     while count < 2 or count > 100000:
         countStr = input(
-            "How many times sould I simulate the game? (Enter a number between 2 and 100 000): ")
+            "How many times should I simulate the game? (Enter a number between 2 and 100 000): ")
         countStr = countStr.replace(" ", "")
         try:
             count = int(countStr)
@@ -174,7 +174,7 @@ def simulate():
     skip_counts = (count > 10001)
 
     if not print_all:
-        print("Not printing details. If you want to see details, pick a number below 1000")
+        print("Not printing details. If you want to see details, pick a number below 1000.")
 
     sim_stats = Counters()
     for i in range(1, count + 1):
@@ -196,7 +196,7 @@ def simulate():
             print("\tThe winning door is {}.".format(winner))
         if winner == choice:
             if print_all:
-                print("Player shoud stay.")
+                print("Player should stay.")
             counters.stay += 1
             sim_stats.stay += 1
         else:
