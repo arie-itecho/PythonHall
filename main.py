@@ -15,6 +15,7 @@ Pull Requests and Github Issues welcome! Any other feedback as well ;)
 Written by Arie Roos (arie@itecho.co.za)
 """
 
+
 class Counters:
     switch = 0
     stay = 0
@@ -64,8 +65,8 @@ class Doors:
         for i, door in enumerate(self.doors):
             if door == 0:
                 choices.append(i)
-        
-        choice = random.choice(choices)          
+
+        choice = random.choice(choices)
         self.doors[choice] += 2
         return choice + 1
 
@@ -87,22 +88,14 @@ class Doors:
 
     def print(self):
         for door in self.doors:
-            if door == 0:
-                print("[\u25A0]", end='')
-            if door == 1:
-                print("[\u25A0]", end='')
-            if door == 2:
-                print("[g]", end='')
-            if door == 3:
-                print("[p]", end='')
-            if door == 4:
-                print("[*]", end='')
-            if door == 5:
-                print("[*]", end='')
-            if door == 6:
-                print("[G]", end='')
-            if door == 7:
-                print("[P]", end='')
+            {0: lambda: print("[\u25A0]", end=''),
+             1: lambda: print("[\u25A0]", end=''),
+             2: lambda: print("[g]", end=''),
+             3: lambda: print("[p]", end=''),
+             4: lambda: print("[*]", end=''),
+             5: lambda: print("[*]", end=''),
+             6: lambda: print("[G]", end=''),
+             7: lambda: print("[P]", end='')}[door]()
         print()
 
 
@@ -162,7 +155,7 @@ def play():
     if not won and switch == 'n':
         counters.switch += 1
         print("You lost. You should've switched.")
-    
+
     print_sep()
 
 
@@ -176,7 +169,7 @@ def simulate():
             count = int(countStr)
         except ValueError:
             count = 0
-    
+
     print_all = (count < 1001)
     skip_counts = (count > 10001)
 
@@ -211,7 +204,7 @@ def simulate():
                 print("Player should switch.")
             counters.switch += 1
             sim_stats.switch += 1
-    
+
     print("Simulation Done:")
     sim_stats.print_stats()
     print_sep()
