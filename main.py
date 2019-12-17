@@ -12,7 +12,7 @@ of my labour.
 
 Pull Requests and Github Issues welcome! Any other feedback as well ;)
 
-Written by Arie Roos (arie@itecho.co.za)
+Written by Arie Roos (ariechildofgod@gmail.com)
 """
 
 
